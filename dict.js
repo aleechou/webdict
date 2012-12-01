@@ -17,9 +17,9 @@
         document.head.appendChild(element);
     } ;
     
-    loadScript('http://127.0.0.1/otp/dict/jquery.js') ;
-    loadCss('http://127.0.0.1/otp/dict/jquery.ui/jquery-ui-1.8.23.custom.css') ;
-    loadScript('http://127.0.0.1/otp/dict/jquery.ui/jquery-ui-1.8.23.custom.min.js',function(){
+    loadScript('http://icell.jecat.cn/webdict/jquery.js') ;
+    loadCss('http://icell.jecat.cn/webdict/jquery.ui/jquery-ui-1.8.23.custom.css') ;
+    loadScript('http://icell.jecat.cn/webdict/jquery.ui/jquery-ui-1.8.23.custom.min.js',function(){
         
         var $ = jQuery ;
         
