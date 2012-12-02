@@ -17,7 +17,7 @@
         {
             var lnk = document.createElement("a") ;
             lnk.innerText = "生词本" ;
-            lnk.setAttribute('style',"float: right;margin-right:30px") ;
+            lnk.setAttribute('style',"float: right;margin-right:5px") ;
             lnk.setAttribute('href',"http://scb.dict.cn/") ;
             lnk.setAttribute('target',"_blank") ;
             titleBar.appendChild(lnk) ;
@@ -73,7 +73,7 @@
             // open dict.cn
             var lnk3 = document.createElement("a") ;
             lnk3.innerText = "Dict.cn" ;
-            lnk3.setAttribute('style',"float: right;margin-right:30px") ;
+            lnk3.setAttribute('style',"float: right;margin-right:15px") ;
             lnk3.setAttribute('target',"_blank") ;
             lnk3.onclick = function(){
                 var input = document.getElementById("idQQCloudDictQueryInput") ;
@@ -81,17 +81,32 @@
             }
             titleBar.appendChild(lnk3) ;
             
+            // move to left
+            var toLeft = document.createElement("a") ;
+            toLeft.innerText = "<<" ;
+            toLeft.setAttribute('style',"float: right;margin-right:15px") ;
+            toLeft.onclick = function(){
+                document.getElementById("idQQCloudDictMainWnd").style.left = "0px" ;
+            }
+            titleBar.appendChild(toLeft) ;
+            
             // toggle display
             document.getElementById("idQQCloudDictFoldSwitchOn").addEventListener("click",function(){
                 lnk.style.display = "none" ;
                 lnk2.style.display = "none" ;
                 lnk3.style.display = "none" ;
+                toLeft.style.display = "none" ;
             }) ;
             document.getElementById("idQQCloudDictFoldSwitchOff").addEventListener("click",function(){
                 lnk.style.display = "block" ;
                 lnk2.style.display = "block" ;
                 lnk3.style.display = "block" ;
+                toLeft.style.display = "block" ;
             }) ;
+            
+            
+            // hide btn of dict.qq.com
+            document.getElementById("idQQCloudDictSupport").style.display = "none" ;
         }
         
         document.onselectionchange = function(){
