@@ -22,6 +22,13 @@
             lnk.setAttribute('target',"_blank") ;
             titleBar.appendChild(lnk) ;
             
+            // loading of save to dict.cn
+            var loading = document.createElement("span") ;
+            loading.setAttribute('style',"float:right;margin-right:10px;display:none") ;
+            loading.innerText = "submiting ... " ;
+            titleBar.appendChild(loading) ;
+            
+            
             // form of save to dict.cn
             var form = document.createElement("form") ;
             form.id = "__dictcn_form"
@@ -29,14 +36,31 @@
             form.setAttribute('action',"http://scb.dict.cn/index.php?do=AddWord") ;
             form.setAttribute('method',"post") ;
             form.setAttribute('style',"display:none") ;
-            form.setAttribute('target',"_blank") ;
+            form.setAttribute('target',"___dict_iframe") ;
             titleBar.appendChild(form) ;
             
             // save to dict.cn new word book
             var lnk2 = document.createElement("a") ;
             lnk2.innerText = "[+]" ;
-            lnk2.setAttribute('style',"float: right;margin-right:10px") ;
+            lnk2.setAttribute('style',"float:right;margin-right:10px") ;
             lnk2.onclick = function(){
+                
+                // create new iframe for submit
+                var iframe = document.getElementById("___dict_iframe") ;
+                if(iframe)
+                {
+                    titleBar.removeChild(iframe) ;
+                }
+                iframe = document.createElement("iframe") ;
+                iframe.id = iframe.name = "___dict_iframe" ;
+                iframe.setAttribute('style',"display:none") ;
+                titleBar.appendChild(iframe) ;
+            
+                loading.style.display = "inline" ;
+                setTimeout(function(){
+                    loading.style.display = "none" ;
+                },2000);
+                
                 var input = document.getElementById("idQQCloudDictQueryInput") ;
                 document.getElementById("___dictcn_newword").value = input.value ;
                 document.getElementById("__dictcn_form").submit() ;
