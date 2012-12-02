@@ -66,7 +66,7 @@
                 document.getElementById("__dictcn_form").submit() ;
                 
                 // close query result panel
-                document.getElementById("idQQCloudDictClearBtn").click() ;
+                // document.getElementById("idQQCloudDictClearBtn").click() ;
             }
             titleBar.appendChild(lnk2) ;
             
@@ -130,11 +130,6 @@
             {
                 input.value = txt ;
             }
-            
-            
-            // http://scb.dict.cn/index.php?do=AddWord&wordclass=0&newword=hi
-            // wordclass:0
-            // newword:hi
             
         } ;
         
