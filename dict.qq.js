@@ -33,27 +33,39 @@
             titleBar.appendChild(form) ;
             
             // save to dict.cn
-            lnk = document.createElement("a") ;
-            lnk.innerText = "[+]" ;
-            lnk.setAttribute('style',"float: right;margin-right:10px") ;
-            lnk.onclick = function(){
+            var lnk2 = document.createElement("a") ;
+            lnk2.innerText = "[+]" ;
+            lnk2.setAttribute('style',"float: right;margin-right:10px") ;
+            lnk2.onclick = function(){
                 var input = document.getElementById("idQQCloudDictQueryInput") ;
                 
                 document.getElementById("___dictcn_newword").value = input.value ;
                 document.getElementById("__dictcn_form").submit() ;
             }
-            titleBar.appendChild(lnk) ;
+            titleBar.appendChild(lnk2) ;
             
             // open dict.cn
-            lnk = document.createElement("a") ;
-            lnk.innerText = "Dict.cn" ;
-            lnk.setAttribute('style',"float: right;margin-right:30px") ;
-            lnk.setAttribute('target',"_blank") ;
-            lnk.onclick = function(){
+            var lnk3 = document.createElement("a") ;
+            lnk3.innerText = "Dict.cn" ;
+            lnk3.setAttribute('style',"float: right;margin-right:30px") ;
+            lnk3.setAttribute('target',"_blank") ;
+            lnk3.onclick = function(){
                 var input = document.getElementById("idQQCloudDictQueryInput") ;
                 this.href = "http://dict.cn/" + input.value ;
             }
-            titleBar.appendChild(lnk) ;
+            titleBar.appendChild(lnk3) ;
+            
+            // toggle display
+            document.getElementById("idQQCloudDictFoldSwitchOn").addEventListener("click",function(){
+                lnk.style.display = "none" ;
+                lnk2.style.display = "none" ;
+                lnk3.style.display = "none" ;
+            }) ;
+            document.getElementById("idQQCloudDictFoldSwitchOff").addEventListener("click",function(){
+                lnk.style.display = "block" ;
+                lnk2.style.display = "block" ;
+                lnk3.style.display = "block" ;
+            }) ;
         }
         
         document.onselectionchange = function(){
