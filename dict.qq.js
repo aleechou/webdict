@@ -32,15 +32,17 @@
             form.setAttribute('target',"_blank") ;
             titleBar.appendChild(form) ;
             
-            // save to dict.cn
+            // save to dict.cn new word book
             var lnk2 = document.createElement("a") ;
             lnk2.innerText = "[+]" ;
             lnk2.setAttribute('style',"float: right;margin-right:10px") ;
             lnk2.onclick = function(){
                 var input = document.getElementById("idQQCloudDictQueryInput") ;
-                
                 document.getElementById("___dictcn_newword").value = input.value ;
                 document.getElementById("__dictcn_form").submit() ;
+                
+                // close query result panel
+                document.getElementById("idQQCloudDictClearBtn").click() ;
             }
             titleBar.appendChild(lnk2) ;
             
@@ -81,6 +83,8 @@
             {
                 return ;
             }
+            
+            document.getElementById("idQQCloudDictFoldSwitchOff").click() ;
             
             var input = document.getElementById("idQQCloudDictQueryInput") ;
             if(input)
