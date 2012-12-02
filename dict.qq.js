@@ -34,6 +34,10 @@
             }
             
             
+            // http://scb.dict.cn/index.php?do=AddWord 
+            // wordclass:0
+            // newword:hi
+            
         } ;
         
     });
